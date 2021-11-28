@@ -4,7 +4,6 @@ import requests
 import json
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
-from threading import Thread
 
 
 CREDITS = """Designers

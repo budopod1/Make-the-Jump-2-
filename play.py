@@ -117,10 +117,11 @@ class Play:
     if self.timer.die():
       self.tilemap.event(Event(HURT))
     
-    if self.add_time.just_down:
-      self.timer.add()
-    if self.remove_time.just_down:
-      self.timer.remove()
+    if self.game_state == State.MAKE:
+      if self.add_time.just_down:
+        self.timer.add()
+      if self.remove_time.just_down:
+        self.timer.remove()
     
     self.game.gui("player", self.player.sprite, 0.9, 0.9, 0.75)
     self.game.text(str(floor(self.timer.render())), (255, 255, 255), 0.9, 0.3)
